@@ -147,7 +147,28 @@ def stock_sales_menu():
     pass
 
 def investment_sales_menu():
-    pass
+    """
+    Allows a user to choose which investments the would like to sell
+    """
+    clear()
+    print("<------------------------------->")
+    print("      Investment Sales Menu      ")
+    print("<------------------------------->\n")
+    print("1. Sell Stocks")
+    print("2. Sell Cryptocurrencies")
+    print("3. Main Menu")
+    choice = input("Please choose between options 1 - 3:\n")
+
+    while True:
+        if choice == "1":
+            initial_balance.stock_sale()
+        elif choice == "2":
+            initial_balance.crypto_sale()
+        elif choice == "3":
+            main_menu()
+        else:
+            print("Not a valid Option! Choose between 1 - 3:\n")
+            investment_sales_menu()     
 
 def investment_menu():
     """
