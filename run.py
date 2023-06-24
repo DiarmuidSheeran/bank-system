@@ -24,3 +24,16 @@ class User:
         self.country = country
         self.email = email
         self.account_num = account_num
+    
+    def account_created(self):
+        """
+        Let the user know their account has been created succesfully
+        """
+        print("\n-------------------------------------------")
+        print(" Your Account has been created succesfully")
+        print("-------------------------------------------\n")
+        print("---------------------------------------------")
+        print(f" Your account number is: {self.account_num}")
+        print("---------------------------------------------\n")
+
+    
