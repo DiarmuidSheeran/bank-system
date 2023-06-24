@@ -119,9 +119,26 @@ class BankAccount(User):
         if self.xrp != 0:
             print(f"You have 1 xrp bought at the price of €{self.xrp}")
         go_back_key()
-        
+
     def deposit_to_current_account(self):
-        pass
+        """
+        Allows the user to deposit more money to their bank balance.
+        The User is prompted to enter the amount and is given their updated
+        total balance
+        """
+        clear()
+        while True:
+            deposit = input("\nHow much would you like to deposit to you current account?\n")
+            if char_check.search(deposit) is None and special_character_check.search(deposit) is None:
+                self.balance = self.balance + float(deposit)
+                clear()
+                print(f"You have succesfully deposited €{deposit} to your current account.")
+                print(f"Your new current account balance is €{self.balance}")
+                go_back_key()
+            else:
+                print("\nNo special characters or letters are allowed.")
+                print("Please enter a valid amount to deposit.\n")
+                continue
     
     def withdraw_from_current_account(self):
         pass
