@@ -420,7 +420,47 @@ class BankAccount(User):
                     continue
 
     def meta_sale(self):
-        pass
+        """
+        Assingns a random value to a new variable to create a new stock price
+        The new stock price is compared to the origianlly purcheaed price
+        A calcululation is made for whether it is a profit or a loss.
+        The new variable stock price is add to the users balance.
+        The User is given a summary on whether they made a profit or a loss.
+        """
+        clear()
+        meta_current_price = random.randint(50, 150)
+        if self.meta == 0:
+            print("You have no money invested in Meta!")
+            go_back_key()
+        else:
+            while True:
+                print(f"Meta price is currently trading at €{str(meta_current_price)}. You bought it at €{(self.meta)}")
+                choice = input("Would you like to sell your share in Meta? (yes/no)\n")
+                if choice == "yes":
+                    if self.meta > meta_current_price:
+                        loss = self.meta - meta_current_price  
+                        self.stocks -= self.meta
+                        self.meta = 0
+                        self.balance += meta_current_price
+                        clear()
+                        print(f"You have sold your Meta Stock at a loss of €{loss}")
+                        print(f"€{meta_current_price} has been added to your current account.")
+                        go_back_key()
+                    elif self.meta < meta_current_price:
+                        profit = meta_current_price - self.meta  
+                        self.stocks -= self.meta
+                        self.meta = 0
+                        self.balance += meta_current_price
+                        clear()
+                        print(f"You have sold your Meta Stock at a profit of €{profit}")
+                        print(f"€{meta_current_price} has been added to your current account.")
+                        go_back_key()
+                elif choice == "no":
+                    stock_sales_menu()
+                else:
+                    print("Not a valid Option! Please type yes or no.\n")
+                    continue 
+
 
     def stock_sale(self):
         """
