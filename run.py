@@ -224,7 +224,40 @@ class BankAccount(User):
                 continue
 
     def buy_google(self):
-        pass
+        """
+        Gives google stock a random value between 200 and 350
+        Only allows user to purchase 1 share
+        Wont allow user to purchase stock at the price if their balnce is below the value
+        Updates stocks and google variables with the values added if purchased
+        """
+        clear()
+        google = random.randint(200, 350)
+        if self.google != 0:
+            print("You are only able to hold one share at a time!")
+            go_back_key()
+        else:
+            while True:
+                clear()
+                print(f"Google is currently trading at: €{str(google)} a share.")
+                choice = input("\nWould you like to purchase 1 share in Google? (yes/no)\n")
+                if choice == "yes":
+                    if self.balance - float(google) < 0:
+                        print("Insuficient funds available to buy this stock")
+                        print(f"Your current account balance is {self.balance}.\n")
+                        go_back_key()
+                    else:
+                        self.balance = self.balance - float(google)
+                        self.stocks += float(google)
+                        self.google += float(google)
+                        clear()
+                        print("Congratulations!\n")
+                        print(f"You have succesfully bought 1 share in Google trading at €{str(google)} a share.")
+                        go_back_key()
+                elif choice == "no":
+                   stock_buy_menu()
+                else:
+                    print("Not a valid Option! Please type yes or no.\n")
+                    continue
 
     def buy_apple(self):
         pass
@@ -548,6 +581,6 @@ balance = input("Please enter an amount for your initial deposit:\n")
 clear()
 
 # Add Values to bank and pass data back to initial deposit with balance amount
-bank = BankAccount(fname, lname, age, country, email, account_num, balance)
-bank.initial_deposit()
+initial_balance = BankAccount(fname, lname, age, country, email, account_num, balance)
+initial_balance.initial_deposit()
 main_menu()
