@@ -74,7 +74,13 @@ class BankAccount(User):
         self.crypto = 0
         self.bitcoin = 0
         self.xrp = 0
-    
+
+    def initial_deposit(self):
+        """
+        Adds value to the overall balance of the class which can be used
+        to manipulate other values within the class
+        """
+        self.balance = float(self.balance)
     
 
 # Start up menu screen
