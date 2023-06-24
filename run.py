@@ -85,7 +85,13 @@ class BankAccount(User):
         self.balance = float(self.balance)
     
     def current_account_balance(self):
-        pass
+        """
+        Function to display when promted all of the differnet accounts within the bank system.
+        It shows the user the different values within different sections of their accounts.
+        It gives the user information on the percentage of interest they are earning on there savings
+        and what prices they had bought there investments at.
+        """
+        savings_projection = float(self.savings) + float(self.savings)*0.025
 
     def deposit_to_current_account(self):
         pass
