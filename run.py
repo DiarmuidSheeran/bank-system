@@ -128,3 +128,6 @@ while True:
         continue
 clear()
 account_num = random.randint(999, 9999)
+
+entered_info = User(fname, lname, age, country, email, account_num)
+entered_info.account_created()
