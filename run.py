@@ -92,7 +92,34 @@ class BankAccount(User):
         and what prices they had bought there investments at.
         """
         savings_projection = float(self.savings) + float(self.savings)*0.025
-
+        print("<------------Current Account Balance Info-------------->")
+        print(f"\nYour Current Account Balance is: €{self.balance}")
+        print("")
+        print("\n<-----------Savings Account Balance Info------------->")
+        if self.savings != 0:
+            print(f"\nYour Current Savings Account Balance is: €{self.savings} at a 0.025% APY")
+            print(f"In one year you are expected to make €{int(self.savings)*0.025} in interest")
+            print(f"Withc your current balance, your Savings account balance is projected to be at €{savings_projection} in one years time.")
+        else:
+            print(f"\nYour Savings Account balance is €{self.savings}")
+        print("")
+        print("\n<-------------Stock Balances------------>")
+        print(f"\nYour Current Stock Portfolio Balance is: €{self.stocks}.\n")
+        if self.google != 0:
+            print(f"You have 1 share of google bought at the price of €{self.google}")
+        if self.google != 0:
+            print(f"You have 1 share of Apple bought at the price of €{self.apple}")
+        if self.google != 0:
+            print(f"You have 1 share of Meta bought at the price of €{self.meta}")
+        print("")
+        print("\n<-------------Cryptocurrency Balances------------->")
+        print(f"\nYour Current Crypto Portfolio Balance is: €{self.crypto}.\n")
+        if self.bitcoin != 0:
+            print(f"You have 1 Bitcoin bought at the price of €{self.bitcoin}")
+        if self.xrp != 0:
+            print(f"You have 1 xrp bought at the price of €{self.xrp}")
+        go_back_key()
+        
     def deposit_to_current_account(self):
         pass
     
