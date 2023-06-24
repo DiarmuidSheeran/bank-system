@@ -57,7 +57,8 @@ class User:
         print(f"Country of Residency: {self.country}")
         print(f"Email: {self.email}")
         print(f"Account Number: {self.account_num}")
-
+        go_back_key()
+        
 class BankAccount(User):
     """
     Create a class for Bank Account to inherit values from User class.
