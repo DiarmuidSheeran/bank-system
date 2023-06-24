@@ -548,7 +548,46 @@ class BankAccount(User):
                     continue          
 
     def bitcoin_sale(self):
-        pass
+        """
+        Assingns a random value to a new variable to create a new crypto price
+        The new crypto price is compared to the origianlly purcheaed price
+        A calcululation is made for whether it is a profit or a loss.
+        The new variable crypto price is add to the users balance.
+        The User is given a summary on whether they made a profit or a loss.
+        """
+        clear()
+        bitcoin_current_price = random.randint(10000, 100000)
+        if self.bitcoin == 0:
+            print("You have no money invested in Bitcoin!")
+            go_back_key()
+        else:
+            while True:
+                print(f"Bitcoin price is currently trading at €{str(bitcoin_current_price)}. You bought it at €{(self.bitcoin)}")
+                choice = input("Would you like to sell your share in Bitcoin? (yes/no)\n")
+                if choice == "yes":
+                    if self.bitcoin > bitcoin_current_price:
+                        loss = self.bitcoin - bitcoin_current_price  
+                        self.crypto -= self.bitcoin
+                        self.bitcoin = 0
+                        self.balance += bitcoin_current_price
+                        clear()
+                        print(f"You have sold your Bitcoin at a loss of €{loss}")
+                        print(f"€{bitcoin_current_price} has been added to your current account.")
+                        go_back_key()
+                    elif self.bitcoin < bitcoin_current_price:
+                        profit = bitcoin_current_price - self.bitcoin  
+                        self.crypto -= self.bitcoin
+                        self.bitcoin = 0
+                        self.balance += bitcoin_current_price
+                        clear()
+                        print(f"You have sold your Bitcoin at a profit of €{profit}")
+                        print(f"€{bitcoin_current_price} has been added to your current account.")
+                        go_back_key()
+                elif choice == "no":
+                    crypto_sale_menu()
+                else:
+                    print("Not a valid Option! Please type yes or no.\n")
+                    continue
 
     def xrp_sale(self):
         pass
