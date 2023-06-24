@@ -2,6 +2,7 @@ import random
 import re
 import os
 
+# Checks if entered values contain specific charecters 
 special_character_check = re.compile('[`¬!"£$%^&*()\-_+=:;#@~<>/?.,\|"]')
 email_check = re.compile('@')
 char_check = re.compile('[abcdefghijklmnopqrstuvwxyz]')
@@ -152,7 +153,19 @@ while True:
         print("Please enter a valid Email.\n")
         continue
 clear()
+
+# Random 4 digit number is assigned to the user for their account number
 account_num = random.randint(999, 9999)
 
+# User entered information is passed to User class
 entered_info = User(fname, lname, age, country, email, account_num)
 entered_info.account_created()
+
+# User promted to enter an intial amount to their bank balance
+balance = input("Please enter an amount for your initial deposit:\n")
+clear()
+
+# Add Values to bank and pass data back to initial deposit with balance amount
+bank = BankAccount(fname, lname, age, country, email, account_num, balance)
+bank.initial_deposit()
+main_menu()
