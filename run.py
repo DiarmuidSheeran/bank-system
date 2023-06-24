@@ -227,7 +227,7 @@ class BankAccount(User):
         """
         Gives google stock a random value between 200 and 350
         Only allows user to purchase 1 share
-        Wont allow user to purchase stock at the price if their balnce is below the value
+        Wont allow user to purchase stock at the price if their balance is below the value
         Updates stocks and google variables with the values added if purchased
         """
         clear()
@@ -260,8 +260,41 @@ class BankAccount(User):
                     continue
 
     def buy_apple(self):
-        pass
-    
+        """
+        Gives Apple stock a random value between 400 and 650
+        Only allows user to purchase 1 share
+        Wont allow user to purchase stock at the price if their balance is below the value
+        Updates stocks and apple variables with the values added if purchased
+        """
+        clear()
+        apple = random.randint(400, 650)
+        if self.apple != 0:
+            print("You are only able to hold one share at a time!")
+            go_back_key()
+        else:
+            while True:
+                clear()
+                print(f"Apple is currently trading at: €{str(apple)} a share.")
+                choice = input("\nWould you like to purchase 1 share in Apple? (yes/no)\n")
+                if choice == "yes":
+                    if self.balance - float(apple) < 0:
+                        print("Insuficient funds available to buy this stock")
+                        print(f"Your current account balance is {self.balance}.\n")
+                        go_back_key()
+                    else:
+                        self.balance = self.balance - float(apple)
+                        self.stocks += float(apple)
+                        self.apple += float(apple)
+                        clear()
+                        print("Congratulations!\n")
+                        print(f"You have succesfully bought 1 share in Apple trading at €{str(apple)} a share.")
+                        go_back_key()
+                elif choice == "no":
+                   stock_buy_menu()
+                else:
+                    print("Not a valid Option! Please type yes or no.\n")
+                    continue
+
     def buy_meta(self):
         pass
 
