@@ -36,4 +36,15 @@ class User:
         print(f" Your account number is: {self.account_num}")
         print("---------------------------------------------\n")
 
-    
+    def user_info(self):
+        """
+        Function to show user information when prompted
+        """
+        clear()
+        print("User Information:\n")
+        print(f"First Name: {self.fname}")
+        print(f"Last Name: {self.lname}")
+        print(f"Age: {self.age}")
+        print(f"Country of Residency: {self.country}")
+        print(f"Email: {self.email}")
+        print(f"Account Number: {self.account_num}")
