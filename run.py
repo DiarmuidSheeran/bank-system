@@ -141,11 +141,35 @@ def crypto_sale_menu():
     pass
 
 def stock_buy_menu():
-    pass
+    """
+    A menu that gives the user an option 3 stocks to purchase"
+    """
+    clear()
+    print("Warning! Trading in stocks can be high risk but can come with high rewards!")
+    print("<--------------------->")
+    print("      Choose Stock     ")
+    print("<--------------------->\n")
+    print("1. Google (GOOGL)")
+    print("2. Apple (AAPL)")
+    print("3. Meta (META)")
+    print("4. Main Menu")
+    choice = input("Please choose between options 1 - 4:\n")
+    while True:
+        if choice == "1":
+           initial_balance.buy_google()
+        elif choice == "2":
+            initial_balance.buy_apple()
+        elif choice == "3":
+            initial_balance.buy_meta()
+        elif choice == "4":
+            main_menu()
+        else:
+            print("Not a valid Option! Choose between 1 - 4:\n")
+            stock_buy_menu 
 
 def stock_sales_menu():
     """
-    A menu that allows a user to choose which stock they would like to purchase from a choice of 3 stocks
+    A menu that allows a user to choose which stock they would like to sell.
     """
     clear()
     print("<------------------------------->")
