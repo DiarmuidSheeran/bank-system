@@ -345,7 +345,15 @@ class BankAccount(User):
         pass
 
     def stock_sale(self):
-        pass
+        """
+        Denies user entry if balnce of stocks is below 0
+        """
+        clear()
+        if self.stocks == 0:
+            print("You have no money invested in stocks!")
+            go_back_key()
+        else:
+            stock_sales_menu()
 
     def buy_bitcoin(self):
         """
