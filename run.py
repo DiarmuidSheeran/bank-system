@@ -141,7 +141,49 @@ class BankAccount(User):
                 continue
     
     def withdraw_from_current_account(self):
-        pass
+        """
+        Gives the user a choice to withdraw money from there account.
+        A security features prompts the user to enter their account number to be able to withdraw
+        money from their account.
+        The amount entered is subctracted from the users balance
+        """
+        clear()
+        while True:
+            self.account_num = str(self.account_num)
+            print("<-----ACCOUNT SECURITY----->")
+            pin_match = input("Please enter your account number:\n")
+            if pin_match == self.account_num:
+                clear()
+                while True:
+                    withdraw = input("\nHow much would you like to withdraw from your current account?\n")
+                    if char_check.search(withdraw) is None and special_character_check.search(withdraw) is None:
+                        if self.balance - float(withdraw) < 0:
+                            print("Insuficient funds available!")
+                            print(f"Your current account balance is {self.balance}.\n")
+                            while True:
+                                choice = input("Would you like to make a withdrawl? (yes/no)\n")
+                                if choice == "yes":
+                                    clear()
+                                    break
+                                elif choice == "no":
+                                    clear()
+                                    main_menu()
+                                else:
+                                    print("Not a valid Option! Please type yes or no.\n")
+                                    continue
+                        else:
+                            self.balance = self.balance - float(withdraw)
+                            clear()
+                            print(f"You have succesfully withdrawn €{withdraw} from your current account.")
+                            print(f"Your new current account balance is €{self.balance}")
+                            go_back_key()
+                    else:
+                        print("\nNo special characters or letters are allowed.")
+                        print("Please enter a valid amount to withdraw.\n")
+                        continue
+            else:
+                print("\nSecurity Risk, your account number is inncorect")
+                go_back_key()
 
     def savings_account(self):
         """
