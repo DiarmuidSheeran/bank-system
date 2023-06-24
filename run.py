@@ -135,7 +135,28 @@ def go_back_key():
     pass
 
 def crypto_buy_menu():
-    pass
+    """
+    A menu that gives users a choice of which cryptocurrencies they can buy 
+    """
+    clear()
+    print("Warning! Trading in Cryptocurrencies is very high risk!")
+    print("<--------------------->")
+    print("      Choose Crypto    ")
+    print("<--------------------->\n")
+    print("1. Bitcoin")
+    print("2. XRP")
+    print("3. Main Menu")
+    choice = input("Please choose between options 1 - 3:\n")
+    while True:
+        if choice == "1":
+           initial_balance.buy_bitcoin()
+        elif choice == "2":
+            initial_balance.buy_xrp()
+        elif choice == "3":
+            main_menu()
+        else:
+            print("Not a valid Option! Choose between 1 - 3:\n")
+            crypto_buy_menu
 
 def crypto_sale_menu():
     """
