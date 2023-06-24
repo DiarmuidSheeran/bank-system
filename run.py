@@ -336,7 +336,46 @@ class BankAccount(User):
 
 
     def google_sale(self):
-        pass
+        """
+        Assingns a random value to a new variable to create a new stock price
+        The new stock price is compared to the origianlly purcheaed price
+        A calcululation is made for whether it is a profit or a loss.
+        The new variable stock price is add to the users balance.
+        The User is given a summary on whether they made a profit or a loss.
+        """
+        clear()
+        google_current_price = random.randint(200, 350)
+        if self.google == 0:
+            print("You have no money invested in Google!")
+            go_back_key()
+        else:
+            while True:
+                print(f"Googles price is currently trading at €{str(google_current_price)}. You bought it at €{(self.google)}")
+                choice = input("Would you like to sell your share in Google? (yes/no)\n")
+                if choice == "yes":
+                    if self.google > google_current_price:
+                        loss = self.google - google_current_price  
+                        self.stocks -= self.google
+                        self.google = 0
+                        self.balance += google_current_price
+                        clear()
+                        print(f"You have sold your Google Stock at a loss of €{loss}")
+                        print(f"€{google_current_price} has been added to your current account.")
+                        go_back_key()
+                    elif self.google < google_current_price:
+                        profit = google_current_price - self.google  
+                        self.stocks -= self.google
+                        self.google = 0
+                        self.balance += google_current_price
+                        clear()
+                        print(f"You have sold your Google Stock at a profit of €{profit}")
+                        print(f"€{google_current_price} has been added to your current account.")
+                        go_back_key()
+                elif choice == "no":
+                    stock_sales_menu()
+                else:
+                    print("Not a valid Option! Please type yes or no.\n")
+                    continue
 
     def apple_sale(self):
         pass
