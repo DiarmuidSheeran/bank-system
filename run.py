@@ -138,7 +138,27 @@ def crypto_buy_menu():
     pass
 
 def crypto_sale_menu():
-    pass
+    """
+    A menu that allows a user to sell their purchased cryptocurrencies
+    """
+    clear()
+    print("<--------------------->")
+    print("      Sell Crypto      ")
+    print("<--------------------->\n")
+    print("1. Sell Bitcoin")
+    print("2. Sell XRP")
+    print("3. Main Menu")
+    choice = input("Please choose between options 1 - 3:\n")
+    while True:
+        if choice == "1":
+           initial_balance.bitcoin_sale()
+        elif choice == "2":
+            initial_balance.xrp_sale()
+        elif choice == "3":
+            main_menu()
+        else:
+            print("Not a valid Option! Choose between 1 - 3:\n")
+            crypto_sale_menu  
 
 def stock_buy_menu():
     """
