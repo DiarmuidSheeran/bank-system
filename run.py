@@ -2,7 +2,15 @@ import random
 import re
 import os
 
+special_character_check = re.compile('[`¬!"£$%^&*()\-_+=:;#@~<>/?.,\|"]')
+email_check = re.compile('@')
+char_check = re.compile('[abcdefghijklmnopqrstuvwxyz]')
+num_check = re.compile('[0123456789]')
+
 def clear():
+    """
+    Clears the screen when called
+    """
     """ 
     check if operating system is mac and linux or windows.
     """
@@ -49,6 +57,7 @@ class User:
         print(f"Email: {self.email}")
         print(f"Account Number: {self.account_num}")
 
+
 # Start up menu screen
 print("<------------------------------->")
 print(" Welcome to Sheeran's Credit Union ")
@@ -66,3 +75,55 @@ while True:
         clear()
         break
 
+# Pormpt The user to enter there details one at a time
+while True:
+    fname = input("Please enter your first name:\n")
+    if num_check.search(fname) is None and special_character_check.search(fname) is None:
+        break
+    else:
+        print("\nNo special characters or numbers are allowed.")
+        print("Please enter a valid first name.\n")
+        continue
+clear()
+while True:
+    lname = input("Please enter your last name:\n")
+    if num_check.search(lname) is None and special_character_check.search(lname) is None:
+            break
+    else:
+        print("\nNo special characters or numbers are allowed.")
+        print("Please enter a valid last name.\n")
+        continue
+clear()
+while True:
+    age = input("Please enter your age:\n")
+    if char_check.search(age) is None and special_character_check.search(age) is None:
+        age = int(age)
+        if age < 18:
+            print("You must be over 18 to have a Bank Account with us.")
+            continue
+        else:
+            break
+    else:
+        print("\nNo special characters or letters are allowed.")
+        print("Please enter a valid age.\n")
+        continue
+
+clear()
+while True:
+    country = input("Please enter what country you reside in:\n")
+    if num_check.search(country) is None and special_character_check.search(country) is None:
+            break
+    else:
+        print("\nNo special characters or numbers are allowed.")
+        print("Please enter a valid Country of Residence.\n")
+        continue
+clear()
+while True:
+    email = input("Please enter your email address:\n")
+    if email_check.search(email):
+            break
+    else:
+        print("\nNot a valid email address")
+        print("Please enter a valid Email.\n")
+        continue
+clear()
