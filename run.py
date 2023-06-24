@@ -132,7 +132,18 @@ class BankAccount(User):
         pass
 
 def go_back_key():
-    pass
+    """
+    Generic function that prompts user to enter a key to be returned to main menu
+    """
+    while True:
+        back_key = input("\nPress b to return to main menu:\n")
+        if back_key == 'b':
+            clear()
+            break
+        else: 
+            print("Not a valid option!")
+            continue
+    main_menu()
 
 def crypto_buy_menu():
     """
