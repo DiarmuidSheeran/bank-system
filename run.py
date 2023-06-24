@@ -57,6 +57,25 @@ class User:
         print(f"Email: {self.email}")
         print(f"Account Number: {self.account_num}")
 
+class BankAccount(User):
+    """
+    Create a class for Bank Account to inherit values from User class.
+    This will store the balance of the different accounts within the banking system
+    and modify values where neccesary.
+    """
+    def __init__(self, fname, lname, age, country, email, account_num, balance):
+        super().__init__(fname, lname, age, country, email, account_num)
+        self.balance = balance
+        self.savings = 0
+        self.stocks = 0
+        self.apple = 0
+        self.google = 0
+        self.meta = 0
+        self.crypto = 0
+        self.bitcoin = 0
+        self.xrp = 0
+    
+    
 
 # Start up menu screen
 print("<------------------------------->")
