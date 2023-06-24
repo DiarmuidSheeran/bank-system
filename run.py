@@ -83,9 +83,79 @@ class BankAccount(User):
         """
         self.balance = float(self.balance)
     
+    def current_account_balance(self):
+        pass
+
+    def deposit_to_current_account(self):
+        pass
+    
+    def withdraw_from_current_account(self):
+        pass
+
+    def savings_account(self):
+        pass
+
+    def buy_google(self):
+        pass
+
+    def buy_apple(self):
+        pass
+    
+    def buy_meta(self):
+        pass
+
+    def google_sale(self):
+        pass
+
+    def apple_sale(self):
+        pass
+
+    def meta_sale(self):
+        pass
+
+    def stock_sale(self):
+        pass
+
+    def buy_bitcoin(self):
+        pass
+
+    def buy_xrp(self):
+        pass
+
+    def bitcoin_sale(self):
+        pass
+
+    def xrp_sale(self):
+        pass
+
+    def crypto_sale(self):
+        pass
+
+def go_back_key():
+    pass
+
+def crypto_buy_menu():
+    pass
+
+def crypto_sale_menu():
+    pass
+
+def stock_buy_menu():
+    pass
+
+def stock_sales_menu():
+    pass
+
+def investment_sales_menu():
+    pass
+
+def investment_menu():
+    pass
+
+
 def main_menu():
     """
-    Menu system designed for navigation around the banking application
+    Systems main default menu designed for navigation around the banking application
     """
     clear()
     print("<------------------------------->")
