@@ -348,7 +348,41 @@ class BankAccount(User):
         pass
 
     def buy_bitcoin(self):
-        pass
+        """
+        Gives Bitcoin a random value between 10000 and 100000
+        Only allows user to purchase 1 coin
+        Wont allow user to purchase crypto at the price if their balance is below the value
+        Updates crypto and bitcoin variables with the values added if purchased
+        Balances are updated accordinaly
+        """
+        clear()
+        bitcoin = random.randint(10000, 100000)
+        if self.bitcoin != 0:
+            print("You are only able to hold one Crypto coin at a time!")
+            go_back_key()
+        else:
+            while True:
+                clear()
+                print(f"Bitcoin is currently trading at: €{str(bitcoin)}.")
+                choice = input("\nWould you like to purchase 1 Bitcoin? (yes/no)\n")
+                if choice == "yes":
+                    if self.balance - float(bitcoin) < 0:
+                        print("Insuficient funds available to buy this cryptocurrency")
+                        print(f"Your current account balance is {self.balance}.\n")
+                        go_back_key()
+                    else:
+                        self.balance = self.balance - float(bitcoin)
+                        self.crypto += float(bitcoin)
+                        self.bitcoin += float(bitcoin)
+                        clear()
+                        print("Congratulations!\n")
+                        print(f"You have succesfully bought 1 Bitcoin trading at €{str(bitcoin)}")
+                        go_back_key()
+                elif choice == "no":
+                   crypto_buy_menu()
+                else:
+                    print("Not a valid Option! Please type yes or no.\n")
+                    continue
 
     def buy_xrp(self):
         pass
