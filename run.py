@@ -58,7 +58,7 @@ class User:
         print(f"Email: {self.email}")
         print(f"Account Number: {self.account_num}")
         go_back_key()
-        
+
 class BankAccount(User):
     """
     Create a class for Bank Account to inherit values from User class.
@@ -94,7 +94,42 @@ class BankAccount(User):
         pass
 
     def savings_account(self):
-        pass
+        """
+        Creates a savings account within the users bank account to store money.
+        Money is deposited from the Users current account (balance)
+        The money (amount) is added to self.savings and subtracted from the self.balance
+        If the value entered exceeds what is currently stored in balance an error prompt is called
+        """
+        clear()
+        while True:
+            amount = input("\nHow much would you like to deposit from your current account to your saving account?\n")
+            if char_check.search(amount) is None and special_character_check.search(amount) is None:
+                if self.balance - float(amount) < 0:
+                    print("Insuficient funds available to transfer to savings account!")
+                    print(f"Your current account balance is {self.balance}.\n")
+                    while True:
+                        choice = input("Would you like to make a transfer? (yes/no)\n")
+                        if choice == "yes":
+                            clear()
+                            break
+                        elif choice == "no":
+                            clear()
+                            main_menu()
+                        else:
+                            print("Not a valid Option! Please type yes or no.\n")
+                            continue
+                else:
+                    self.balance = self.balance - float(amount)
+                    self.savings += float(amount)
+                    clear()
+                    print(f"You have succesfully deposited €{amount} to your savings account.")
+                    print(f"Your new savings account balance is €{self.savings}")
+                    print(f"Your new current account balance is €{self.balance}")
+                    go_back_key()
+            else:
+                print("\nNo special characters or letters are allowed.")
+                print("Please enter a valid amount to deposit.\n")
+                continue
 
     def buy_google(self):
         pass
