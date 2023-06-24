@@ -38,7 +38,7 @@ class User:
 
     def user_info(self):
         """
-        Function to show user information when prompted
+        Function to show entered user information when prompted
         """
         clear()
         print("User Information:\n")
@@ -48,3 +48,21 @@ class User:
         print(f"Country of Residency: {self.country}")
         print(f"Email: {self.email}")
         print(f"Account Number: {self.account_num}")
+
+# Start up menu screen
+print("<------------------------------->")
+print(" Welcome to Sheeran's Credit Union ")
+print("<------------------------------->\n")
+print("<------------------------------->")
+print(" Please fill in all details and \n register a new account with us ")
+print("<------------------------------->\n")
+
+while True:
+    register = input("Enter 'c' to continue with registration:\n")
+    if register != 'c':
+        print("Not a valid option!")
+        continue
+    else:
+        clear()
+        break
+
