@@ -229,6 +229,7 @@ class BankAccount(User):
         Only allows user to purchase 1 share
         Wont allow user to purchase stock at the price if their balance is below the value
         Updates stocks and google variables with the values added if purchased
+        Balances are updated accordinaly
         """
         clear()
         google = random.randint(200, 350)
@@ -265,6 +266,7 @@ class BankAccount(User):
         Only allows user to purchase 1 share
         Wont allow user to purchase stock at the price if their balance is below the value
         Updates stocks and apple variables with the values added if purchased
+        Balances are updated accordinaly
         """
         clear()
         apple = random.randint(400, 650)
@@ -296,7 +298,42 @@ class BankAccount(User):
                     continue
 
     def buy_meta(self):
-        pass
+        """
+        Gives Meta stock a random value between 50 and 150
+        Only allows user to purchase 1 share
+        Wont allow user to purchase stock at the price if their balance is below the value
+        Updates stocks and meta variables with the values added if purchased
+        Balances are updated accordinaly
+        """
+        clear()
+        meta = random.randint(50, 150)
+        if self.meta != 0:
+            print("You are only able to hold one share at a time!")
+            go_back_key()
+        else:
+            while True:
+                clear()
+                print(f"Meta is currently trading at: €{str(meta)} a share.")
+                choice = input("\nWould you like to purchase 1 share in Meta? (yes/no)\n")
+                if choice == "yes":
+                    if self.balance - float(meta) < 0:
+                        print("Insuficient funds available to buy this stock")
+                        print(f"Your current account balance is {self.balance}.\n")
+                        go_back_key()
+                    else:
+                        self.balance = self.balance - float(meta)
+                        self.stocks += float(meta)
+                        self.meta += float(meta)
+                        clear()
+                        print("Congratulations!\n")
+                        print(f"You have succesfully bought 1 share in Meta trading at €{str(meta)} a share.")
+                        go_back_key()
+                elif choice == "no":
+                   stock_buy_menu()
+                else:
+                    print("Not a valid Option! Please type yes or no.\n")
+                    continue
+
 
     def google_sale(self):
         pass
