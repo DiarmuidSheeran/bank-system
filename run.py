@@ -83,6 +83,49 @@ class BankAccount(User):
         """
         self.balance = float(self.balance)
     
+def main_menu():
+    """
+    Menu system designed for navigation around the banking application
+    """
+    clear()
+    print("<------------------------------->")
+    print(" Welcome to Sheeran's Credit Union ")
+    print("<------------------------------->\n")               
+    print("<------------------------------->")
+    print("            Main Menu            ")
+    print("<------------------------------->\n")
+    print("1. Check Balance")
+    print("2. Deposit to Current Account")
+    print("3. Withdraw Money")
+    print("4. Move to Savings")
+    print("5. Investment Menu")
+    print("6. Investment Sales")
+    print("7. Check Account Information")
+    print("8. Log out")
+    choice = input("Please choose between options 1 - 8:\n")
+
+    while True:
+        if choice == "1":
+            clear()
+            initial_balance.current_account_balance()
+        elif choice == "2":
+            initial_balance.deposit_to_current_account()
+        elif choice == "3":
+            initial_balance.withdraw_from_current_account()
+        elif choice == "4":
+            initial_balance.savings_account()
+        elif choice == "5":
+            investment_menu()
+        elif choice == "6":
+            investment_sales_menu()
+        elif choice == "7":
+            entered_info.user_info()
+        elif choice == "8":
+            print("Thank you for stopping by we hape to see you again soon!")
+            quit()
+        else:
+            print("Not a valid Option! Choose between 1 - 8:\n")
+            main_menu() 
 
 # Start up menu screen
 print("<------------------------------->")
