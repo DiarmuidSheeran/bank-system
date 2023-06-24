@@ -144,7 +144,31 @@ def stock_buy_menu():
     pass
 
 def stock_sales_menu():
-    pass
+    """
+    A menu that allows a user to choose which stock they would like to purchase from a choice of 3 stocks
+    """
+    clear()
+    print("<------------------------------->")
+    print("      Stocks Sales Menu      ")
+    print("<------------------------------->\n")
+    print("1. Sell Google Stock")
+    print("2. Sell Apple Stock")
+    print("3. Sell Meta Stcok")
+    print("4. Main Menu")
+    choice = input("Please choose between options 1 - 4:\n")
+
+    while True:
+        if choice == "1":
+            initial_balance.google_sale()
+        elif choice == "2":
+            initial_balance.apple_sale()
+        elif choice == "3":
+            initial_balance.meta_sale()
+        elif choice == "4":
+            main_menu()
+        else:
+            print("Not a valid Option! Choose between 1 - 4:\n")
+            stock_sales_menu() 
 
 def investment_sales_menu():
     """
