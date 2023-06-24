@@ -590,7 +590,46 @@ class BankAccount(User):
                     continue
 
     def xrp_sale(self):
-        pass
+        """
+        Assingns a random value to a new variable to create a new crypto price
+        The new crypto price is compared to the origianlly purcheaed price
+        A calcululation is made for whether it is a profit or a loss.
+        The new variable crypto price is add to the users balance.
+        The User is given a summary on whether they made a profit or a loss.
+        """
+        clear()
+        xrp_current_price = random.randint(1, 200)
+        if self.xrp == 0:
+            print("You have no money invested in XRP!")
+            go_back_key()
+        else:
+            while True:
+                print(f"XRP price is currently trading at €{str(xrp_current_price)}. You bought it at €{(self.xrp)}")
+                choice = input("Would you like to sell your share in Bitcoin? (yes/no)\n")
+                if choice == "yes":
+                    if self.xrp > xrp_current_price:
+                        loss = self.xrp - xrp_current_price  
+                        self.crypto -= self.xrp
+                        self.xrp = 0
+                        self.balance += xrp_current_price
+                        clear()
+                        print(f"You have sold your XRP at a loss of €{loss}")
+                        print(f"€{xrp_current_price} has been added to your current account.")
+                        go_back_key()
+                    elif self.xrp < xrp_current_price:
+                        profit = xrp_current_price - self.xrp  
+                        self.crypto -= self.xrp
+                        self.xrp = 0
+                        self.balance += xrp_current_price
+                        clear()
+                        print(f"You have sold your XRP at a profit of €{profit}")
+                        print(f"€{xrp_current_price} has been added to your current account.")
+                        go_back_key()
+                elif choice == "no":
+                    crypto_sale_menu()
+                else:
+                    print("Not a valid Option! Please type yes or no.\n")
+                    continue
 
     def crypto_sale(self):
         """
