@@ -75,7 +75,7 @@ while True:
         clear()
         break
 
-# Pormpt The user to enter there details one at a time
+# Pormpt The user to enter there details one at a time and check if charicters entered are correct
 while True:
     fname = input("Please enter your first name:\n")
     if num_check.search(fname) is None and special_character_check.search(fname) is None:
@@ -127,3 +127,4 @@ while True:
         print("Please enter a valid Email.\n")
         continue
 clear()
+account_num = random.randint(999, 9999)
