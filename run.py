@@ -150,8 +150,28 @@ def investment_sales_menu():
     pass
 
 def investment_menu():
-    pass
+    """
+    Menu that allows a user to choose which investment they want to invest in
+    """
+    clear()
+    print("<----------------------->")
+    print("      Investment Menu    ")
+    print("<----------------------->\n")
+    print("1. Invest in Stocks")
+    print("2. Invest in Cryptocurrencies")
+    print("3. Main Menu")
+    choice = input("Please choose between options 1 - 3:\n")
 
+    while True:
+        if choice == "1":
+            stock_buy_menu()
+        elif choice == "2":
+            crypto_buy_menu()
+        elif choice == "3":
+            main_menu()
+        else:
+            print("Not a valid Option! Choose between 1 - 3:\n")
+            investment_menu()
 
 def main_menu():
     """
