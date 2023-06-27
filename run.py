@@ -643,7 +643,14 @@ class BankAccount(User):
             crypto_sale_menu() 
     
     def quiz_prize(self):
-        pass
+        """
+        If user scores 100% in the quiz this function will add the stock to the users account
+        """
+        google = random.randint(200, 350)
+        self.stocks += float(google)
+        self.google += float(google)
+        print("Congratulations, You have just won a share in google!")
+
 def stock_quiz():
     """
     This Functions asks the users a series of questions. The questions are itterated through one by one
