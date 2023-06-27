@@ -107,9 +107,9 @@ class BankAccount(User):
         print(f"\nYour Current Stock Portfolio Balance is: €{self.stocks}.\n")
         if self.google != 0:
             print(f"You have 1 share of google bought at the price of €{self.google}")
-        if self.google != 0:
+        if self.apple != 0:
             print(f"You have 1 share of Apple bought at the price of €{self.apple}")
-        if self.google != 0:
+        if self.meta != 0:
             print(f"You have 1 share of Meta bought at the price of €{self.meta}")
         print("")
         print("\n<-------------Cryptocurrency Balances------------->")
