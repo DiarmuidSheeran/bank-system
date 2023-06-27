@@ -645,7 +645,59 @@ class BankAccount(User):
     def quiz_prize(self):
         pass
 def stock_quiz():
-        pass
+    """
+    This Functions asks the users a series of questions. The questions are itterated through one by one
+    prompting the user to give an answer. If the answer is correct the score is increased by one.
+    If the user gets 100% of the questions right they will 1 share of google stock
+    """
+    clear()
+
+    questions = ("What is the Stock Market? ",
+                "What do the bear and the bull stand for? ",
+                "Which statement about blue chips stocks is correct? ",
+                "What does 'Short Selling' mean? ")
+    options = (("A. The Stock Market is a market where people bet on race horses to gain some money.", 
+                "B. The Stock Market is a market where people buy products which the merchants have a lot of stock of ", 
+                "C. The Stock Market is a market where people can buy stocks which are shares of companies."),
+                ("A. The bear means stocks are falling and the bull means stocks are going up.", 
+                "B. They are signs that the Stock Market is opened and closed.", 
+                "C. The bear means stocks are rising and the bull means stocks are falling."),
+                ("A. Earnings are used for reinvestment in order to maintain the growing trend of the stocks", 
+                "B. The stocks are consistently profitable with a dividend payment", 
+                "C. They are traded below its market price"),
+                ("A. Selling securities that the investor has borrowed and prepared to buy back later at a lower price", 
+                "B. An trading strategy used to profit from a price decline", 
+                "C. Both A and B"))
+                
+    answers = ("C", "A", "B", "C")
+    score = 0
+    question_num = 0
+
+    for question in questions:
+        print("<---------- Stock Quiz ---------->")
+        print(question)
+        for option in options[question_num]:
+            print(option)
+        guess = input("Enter (A, B or C) \n").upper()
+        if guess == answers[question_num]:
+            score += 1
+            print("CORRECT!")
+        else:
+            print("INCORRECT!")
+        question_num += 1
+    clear()
+    print("---------------------------")
+    print("          Results          ")
+    print("---------------------------")
+
+    score = int(score / len(questions) * 100)
+    print(f"You scored: {score}% in the quiz!")
+    if score == 100:
+        quiz = 1
+        initial_balance.quiz_prize()
+    else:
+        print("Unfortunaitly you didnt win a share in google today :(\n")
+    go_back_key()
 
 def go_back_key():
     """
