@@ -641,6 +641,11 @@ class BankAccount(User):
             go_back_key()
         else:
             crypto_sale_menu() 
+    
+    def quiz_prize(self):
+        pass
+def stock_quiz():
+        pass
 
 def go_back_key():
     """
@@ -823,7 +828,8 @@ def main_menu():
     print("5. Investment Menu")
     print("6. Investment Sales")
     print("7. Check Account Information")
-    print("8. Log out")
+    print("8. Quiz")
+    print("9. Log out")
     choice = input("Please choose between options 1 - 8:\n")
 
     while True:
@@ -843,6 +849,8 @@ def main_menu():
         elif choice == "7":
             entered_info.user_info()
         elif choice == "8":
+            stock_quiz()
+        elif choice == "9":
             print("Thank you for stopping by we hape to see you again soon!")
             quit()
         else:
