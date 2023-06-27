@@ -936,6 +936,9 @@ while True:
 # Pormpt The user to enter there details one at a time and check if charicters entered are correct
 while True:
     fname = input("Please enter your first name:\n")
+    if not fname:
+        print("No Data Entered\n")
+        continue
     if num_check.search(fname) is None and special_character_check.search(fname) is None:
         break
     else:
@@ -945,8 +948,11 @@ while True:
 clear()
 while True:
     lname = input("Please enter your last name:\n")
+    if not lname:
+        print("No Data Entered\n")
+        continue
     if num_check.search(lname) is None and special_character_check.search(lname) is None:
-            break
+        break
     else:
         print("\nNo special characters or numbers are allowed.")
         print("Please enter a valid last name.\n")
@@ -954,23 +960,31 @@ while True:
 clear()
 while True:
     age = input("Please enter your age:\n")
+    
+    if not age:
+        print("No Data Entered\n")
+        continue
     if char_check.search(age) is None and special_character_check.search(age) is None:
         age = int(age)
         if age < 18:
-            print("You must be over 18 to have a Bank Account with us.")
+            print("You must be over 18 to have a Bank Account with us.\n")
             continue
         else:
-            break
+            break    
     else:
         print("\nNo special characters or letters are allowed.")
         print("Please enter a valid age.\n")
         continue
+    
 
 clear()
 while True:
-    country = input("Please enter what country you reside in:\n")
+    country = input("Please enter what country do you reside in:\n")
+    if not country:
+        print("No Data Entered\n")
+        continue
     if num_check.search(country) is None and special_character_check.search(country) is None:
-            break
+        break
     else:
         print("\nNo special characters or numbers are allowed.")
         print("Please enter a valid Country of Residence.\n")
@@ -979,10 +993,10 @@ clear()
 while True:
     email = input("Please enter your email address:\n")
     if email_check.search(email):
-            break
+        break
     else:
         print("\nNot a valid email address")
-        print("Please enter a valid Email.\n")
+        print("Please enter a valid Email with @.\n")
         continue
 clear()
 
@@ -994,8 +1008,19 @@ entered_info = User(fname, lname, age, country, email, account_num)
 entered_info.account_created()
 
 # User promted to enter an intial amount to their bank balance
-balance = input("Please enter an amount for your initial deposit:\n")
-clear()
+while True:
+    balance = input("Please enter an amount for your initial deposit:\n")
+
+    if not balance:
+        print("No deposit entered!\n")
+        continue
+    if char_check.search(balance) is None and special_character_check.search(balance) is None:
+        break  
+    else:
+        print("\nNo special characters or letters are allowed.\n")
+        continue
+        clear()
+    
 
 # Add Values to bank and pass data back to initial deposit with balance amount
 initial_balance = BankAccount(fname, lname, age, country, email, account_num, balance)
