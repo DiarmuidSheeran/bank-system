@@ -668,10 +668,14 @@ def stock_quiz():
     """
     clear()
 
-    questions = ("What is the Stock Market? ",
-                "What do the bear and the bull stand for? ",
-                "Which statement about blue chips stocks is correct? ",
-                "What does 'Short Selling' mean? ")
+    print("<------------------Stock Market Quiz--------------------->")
+    print("\n<--Answer all questions right and win a share in google-->\n")
+    forward_key()
+
+    questions = ("What is the Stock Market? \n",
+                "What do the bear and the bull stand for? \n",
+                "Which statement about blue chips stocks is correct? \n",
+                "What does 'Short Selling' mean? \n")
     options = (("A. The Stock Market is a market where people bet on race horses to gain some money.", 
                 "B. The Stock Market is a market where people buy products which the merchants have a lot of stock of ", 
                 "C. The Stock Market is a market where people can buy stocks which are shares of companies."),
@@ -690,11 +694,11 @@ def stock_quiz():
     question_num = 0
 
     for question in questions:
-        print("<---------- Stock Quiz ---------->")
+        print("<---------- Stock Quiz ---------->\n")
         print(question)
         for option in options[question_num]:
             print(option)
-        guess = input("Enter (A, B or C) \n").upper()
+        guess = input("\nEnter (A, B or C) \n").upper()
         if guess == answers[question_num]:
             score += 1
             clear()
@@ -702,7 +706,7 @@ def stock_quiz():
             forward_key()
         else:
             clear()
-            print("INCORRECT!")
+            print("Your last answer was inccorect!\n")
             forward_key()
         question_num += 1
     clear()
