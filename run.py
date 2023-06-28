@@ -699,10 +699,11 @@ def stock_quiz():
             score += 1
             clear()
             print("Your last answer was correct!\n")
-            
+            forward_key()
         else:
             clear()
             print("INCORRECT!")
+            forward_key()
         question_num += 1
     clear()
     print("---------------------------")
@@ -719,13 +720,14 @@ def stock_quiz():
     go_back_key()
 
 def forward_key():
-    forward = input("Enter 'c' to continue:\n")
-    if forward != 'c':
-        print("Not a valid option!")
-        continue
-    else:
-        clear()
-        break
+    while True:
+        forward = input("Enter 'c' to continue:\n")
+        if forward != 'c':
+            print("Not a valid option!\n")
+            continue
+        else:
+            clear()
+            break
 def go_back_key():
     """
     Generic function that prompts user to enter a key to be returned to main menu
@@ -944,14 +946,7 @@ print("<------------------------------->")
 print(" Please fill in all details and \n register a new account with us ")
 print("<------------------------------->\n")
 
-while True:
-    register = input("Enter 'c' to continue with registration:\n")
-    if register != 'c':
-        print("Not a valid option!")
-        continue
-    else:
-        clear()
-        break
+forward_key()
 
 # Pormpt The user to enter there details one at a time and check if charicters entered are correct
 while True:
