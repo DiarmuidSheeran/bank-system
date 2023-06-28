@@ -129,6 +129,9 @@ class BankAccount(User):
         clear()
         while True:
             deposit = input("\nHow much would you like to deposit to you current account?\n")
+            if not deposit:
+                print("No Data Entered\n")
+                continue
             if char_check.search(deposit) is None and special_character_check.search(deposit) is None:
                 self.balance = self.balance + float(deposit)
                 clear()
@@ -156,6 +159,9 @@ class BankAccount(User):
                 clear()
                 while True:
                     withdraw = input("\nHow much would you like to withdraw from your current account?\n")
+                    if not withdraw:
+                        print("No Data Entered\n")
+                        continue
                     if char_check.search(withdraw) is None and special_character_check.search(withdraw) is None:
                         if self.balance - float(withdraw) < 0:
                             print("Insuficient funds available!")
@@ -195,6 +201,9 @@ class BankAccount(User):
         clear()
         while True:
             amount = input("\nHow much would you like to deposit from your current account to your saving account?\n")
+            if not amount:
+                print("No Data Entered\n")
+                continue
             if char_check.search(amount) is None and special_character_check.search(amount) is None:
                 if self.balance - float(amount) < 0:
                     print("Insuficient funds available to transfer to savings account!")
@@ -742,7 +751,7 @@ def crypto_buy_menu():
             main_menu()
         else:
             print("Not a valid Option! Choose between 1 - 3:\n")
-            crypto_buy_menu
+            crypto_buy_menu()
 
 def crypto_sale_menu():
     """
@@ -765,7 +774,7 @@ def crypto_sale_menu():
             main_menu()
         else:
             print("Not a valid Option! Choose between 1 - 3:\n")
-            crypto_sale_menu  
+            crypto_sale_menu()  
 
 def stock_buy_menu():
     """
@@ -792,7 +801,7 @@ def stock_buy_menu():
             main_menu()
         else:
             print("Not a valid Option! Choose between 1 - 4:\n")
-            stock_buy_menu 
+            stock_buy_menu() 
 
 def stock_sales_menu():
     """
