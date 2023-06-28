@@ -4,7 +4,7 @@ import os
 
 # Checks if entered values contain specific charecters 
 special_character_check = re.compile('[`¬!"£$%^&*()\-_+=:;#@~<>/?.,\|"]')
-email_check = re.compile('@')
+email_check = re.compile('@.')
 char_check = re.compile('[abcdefghijklmnopqrstuvwxyz]')
 num_check = re.compile('[0123456789]')
 
@@ -697,8 +697,11 @@ def stock_quiz():
         guess = input("Enter (A, B or C) \n").upper()
         if guess == answers[question_num]:
             score += 1
-            print("CORRECT!")
+            clear()
+            print("Your last answer was correct!\n")
+            
         else:
+            clear()
             print("INCORRECT!")
         question_num += 1
     clear()
@@ -715,6 +718,14 @@ def stock_quiz():
         print("Unfortunaitly you didnt win a share in google today :(\n")
     go_back_key()
 
+def forward_key():
+    forward = input("Enter 'c' to continue:\n")
+    if forward != 'c':
+        print("Not a valid option!")
+        continue
+    else:
+        clear()
+        break
 def go_back_key():
     """
     Generic function that prompts user to enter a key to be returned to main menu
