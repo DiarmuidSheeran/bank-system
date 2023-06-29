@@ -76,6 +76,11 @@ class BankAccount(User):
         self.crypto = 0
         self.bitcoin = 0
         self.xrp = 0
+        self.google_count = 0
+        self.apple_count = 0
+        self.meta_count = 0
+        self.bitcoin_count = 0
+        self.xrp_count = 0
 
     def initial_deposit(self):
         """
