@@ -95,15 +95,15 @@ class BankAccount(User):
         print("<------------Current Account Balance Info-------------->")
         print(f"\nYour Current Account Balance is: €{self.balance}")
         print("")
-        print("\n<-----------Savings Account Balance Info------------->")
+        print("\n<------------Savings Account Balance Info-------------->")
         if self.savings != 0:
             print(f"\nYour Current Savings Account Balance is: €{self.savings} at a 0.025% APY")
             print(f"In one year you are expected to make €{int(self.savings)*0.025} in interest")
-            print(f"Withc your current balance, your Savings account balance is projected to be at €{savings_projection} in one years time.")
+            print(f"With your current balance, your Savings account balance is projected to be at €{savings_projection} in one years time.")
         else:
             print(f"\nYour Savings Account balance is €{self.savings}")
         print("")
-        print("\n<-------------Stock Balances------------>")
+        print("\n<--------------------Stock Balances------------------->")
         print(f"\nYour Current Stock Portfolio Balance is: €{self.stocks}.\n")
         if self.google != 0:
             print(f"You have 1 share of google bought at the price of €{self.google}")
@@ -112,7 +112,7 @@ class BankAccount(User):
         if self.meta != 0:
             print(f"You have 1 share of Meta bought at the price of €{self.meta}")
         print("")
-        print("\n<-------------Cryptocurrency Balances------------->")
+        print("\n<---------------Cryptocurrency Balances--------------->")
         print(f"\nYour Current Crypto Portfolio Balance is: €{self.crypto}.\n")
         if self.bitcoin != 0:
             print(f"You have 1 Bitcoin bought at the price of €{self.bitcoin}")
@@ -209,7 +209,7 @@ class BankAccount(User):
                     print("Insuficient funds available to transfer to savings account!")
                     print(f"Your current account balance is {self.balance}.\n")
                     while True:
-                        choice = input("Would you like to make a transfer? (yes/no)\n")
+                        choice = input("Would you like to make a transfer? (yes/no)\n").lower()
                         if choice == "yes":
                             clear()
                             break
@@ -249,7 +249,7 @@ class BankAccount(User):
             while True:
                 clear()
                 print(f"Google is currently trading at: €{str(google)} a share.")
-                choice = input("\nWould you like to purchase 1 share in Google? (yes/no)\n")
+                choice = input("\nWould you like to purchase 1 share in Google? (yes/no)\n").lower()
                 if choice == "yes":
                     if self.balance - float(google) < 0:
                         print("Insuficient funds available to buy this stock")
@@ -286,7 +286,7 @@ class BankAccount(User):
             while True:
                 clear()
                 print(f"Apple is currently trading at: €{str(apple)} a share.")
-                choice = input("\nWould you like to purchase 1 share in Apple? (yes/no)\n")
+                choice = input("\nWould you like to purchase 1 share in Apple? (yes/no)\n").lower()
                 if choice == "yes":
                     if self.balance - float(apple) < 0:
                         print("Insuficient funds available to buy this stock")
@@ -323,7 +323,7 @@ class BankAccount(User):
             while True:
                 clear()
                 print(f"Meta is currently trading at: €{str(meta)} a share.")
-                choice = input("\nWould you like to purchase 1 share in Meta? (yes/no)\n")
+                choice = input("\nWould you like to purchase 1 share in Meta? (yes/no)\n").lower()
                 if choice == "yes":
                     if self.balance - float(meta) < 0:
                         print("Insuficient funds available to buy this stock")
@@ -360,7 +360,7 @@ class BankAccount(User):
         else:
             while True:
                 print(f"Googles price is currently trading at €{str(google_current_price)}. You bought it at €{(self.google)}")
-                choice = input("Would you like to sell your share in Google? (yes/no)\n")
+                choice = input("Would you like to sell your share in Google? (yes/no)\n").lower()
                 if choice == "yes":
                     if self.google > google_current_price:
                         loss = self.google - google_current_price  
@@ -402,7 +402,7 @@ class BankAccount(User):
         else:
             while True:
                 print(f"Apples price is currently trading at €{str(apple_current_price)}. You bought it at €{(self.apple)}")
-                choice = input("Would you like to sell your share in Apple? (yes/no)\n")
+                choice = input("Would you like to sell your share in Apple? (yes/no)\n").lower()
                 if choice == "yes":
                     if self.apple > apple_current_price:
                         loss = self.apple - apple_current_price  
@@ -444,7 +444,7 @@ class BankAccount(User):
         else:
             while True:
                 print(f"Meta price is currently trading at €{str(meta_current_price)}. You bought it at €{(self.meta)}")
-                choice = input("Would you like to sell your share in Meta? (yes/no)\n")
+                choice = input("Would you like to sell your share in Meta? (yes/no)\n").lower()
                 if choice == "yes":
                     if self.meta > meta_current_price:
                         loss = self.meta - meta_current_price  
@@ -499,7 +499,7 @@ class BankAccount(User):
             while True:
                 clear()
                 print(f"Bitcoin is currently trading at: €{str(bitcoin)}.")
-                choice = input("\nWould you like to purchase 1 Bitcoin? (yes/no)\n")
+                choice = input("\nWould you like to purchase 1 Bitcoin? (yes/no)\n").lower()
                 if choice == "yes":
                     if self.balance - float(bitcoin) < 0:
                         print("Insuficient funds available to buy this cryptocurrency")
@@ -536,7 +536,7 @@ class BankAccount(User):
             while True:
                 clear()
                 print(f"XRP is currently trading at: €{str(xrp)}.")
-                choice = input("\nWould you like to purchase 1 XRP? (yes/no)\n")
+                choice = input("\nWould you like to purchase 1 XRP? (yes/no)\n").lower()
                 if choice == "yes":
                     if self.balance - float(xrp) < 0:
                         print("Insuficient funds available to buy this cryptocurrency")
@@ -572,7 +572,7 @@ class BankAccount(User):
         else:
             while True:
                 print(f"Bitcoin price is currently trading at €{str(bitcoin_current_price)}. You bought it at €{(self.bitcoin)}")
-                choice = input("Would you like to sell your share in Bitcoin? (yes/no)\n")
+                choice = input("Would you like to sell your share in Bitcoin? (yes/no)\n").lower()
                 if choice == "yes":
                     if self.bitcoin > bitcoin_current_price:
                         loss = self.bitcoin - bitcoin_current_price  
@@ -614,7 +614,7 @@ class BankAccount(User):
         else:
             while True:
                 print(f"XRP price is currently trading at €{str(xrp_current_price)}. You bought it at €{(self.xrp)}")
-                choice = input("Would you like to sell your share in Bitcoin? (yes/no)\n")
+                choice = input("Would you like to sell your share in Bitcoin? (yes/no)\n").lower()
                 if choice == "yes":
                     if self.xrp > xrp_current_price:
                         loss = self.xrp - xrp_current_price  
@@ -725,7 +725,7 @@ def stock_quiz():
 
 def forward_key():
     while True:
-        forward = input("Enter 'c' to continue:\n")
+        forward = input("Enter 'c' to continue:\n").lower()
         if forward != 'c':
             print("Not a valid option!\n")
             continue
@@ -737,7 +737,7 @@ def go_back_key():
     Generic function that prompts user to enter a key to be returned to main menu
     """
     while True:
-        back_key = input("\nPress b to return to main menu:\n")
+        back_key = input("\nPress b to return to main menu:\n").lower()
         if back_key == 'b':
             clear()
             break
@@ -767,7 +767,6 @@ def crypto_buy_menu():
         elif choice == "3":
             main_menu()
         else:
-            print("Not a valid Option! Choose between 1 - 3:\n")
             crypto_buy_menu()
 
 def crypto_sale_menu():
@@ -790,7 +789,6 @@ def crypto_sale_menu():
         elif choice == "3":
             main_menu()
         else:
-            print("Not a valid Option! Choose between 1 - 3:\n")
             crypto_sale_menu()  
 
 def stock_buy_menu():
@@ -817,7 +815,6 @@ def stock_buy_menu():
         elif choice == "4":
             main_menu()
         else:
-            print("Not a valid Option! Choose between 1 - 4:\n")
             stock_buy_menu() 
 
 def stock_sales_menu():
@@ -868,7 +865,6 @@ def investment_sales_menu():
         elif choice == "3":
             main_menu()
         else:
-            print("Not a valid Option! Choose between 1 - 3:\n")
             investment_sales_menu()     
 
 def investment_menu():
@@ -892,7 +888,6 @@ def investment_menu():
         elif choice == "3":
             main_menu()
         else:
-            print("Not a valid Option! Choose between 1 - 3:\n")
             investment_menu()
 
 def main_menu():
@@ -900,16 +895,16 @@ def main_menu():
     Systems main default menu designed for navigation around the banking application
     """
     clear()
-    print("<------------------------------->")
+    print("<--------------------------------->")
     print(" Welcome to Sheeran's Credit Union ")
-    print("<------------------------------->\n")               
-    print("<------------------------------->")
+    print("<--------------------------------->\n")               
+    print("<--------------------------------->")
     print("            Main Menu            ")
-    print("<------------------------------->\n")
+    print("<--------------------------------->\n")
     print("1. Check Balance")
     print("2. Deposit to Current Account")
     print("3. Withdraw Money")
-    print("4. Move to Savings")
+    print("4. Deposit to Savings")
     print("5. Investment Menu")
     print("6. Investment Sales")
     print("7. Check Account Information")
@@ -939,13 +934,12 @@ def main_menu():
             print("Thank you for stopping by we hape to see you again soon!")
             quit()
         else:
-            print("Not a valid Option! Choose between 1 - 8:\n")
             main_menu() 
 
 # Start up menu screen
-print("<------------------------------->")
+print("<--------------------------------->")
 print(" Welcome to Sheeran's Credit Union ")
-print("<------------------------------->\n")
+print("<--------------------------------->\n")
 print("<------------------------------->")
 print(" Please fill in all details and \n register a new account with us ")
 print("<------------------------------->\n")
@@ -986,7 +980,7 @@ while True:
     if char_check.search(age) is None and special_character_check.search(age) is None:
         age = int(age)
         if age < 18:
-            print("You must be over 18 to have a Bank Account with us.\n")
+            print("\nYou must be over 18 to have a Bank Account with us.\n")
             continue
         else:
             break    
@@ -1015,7 +1009,7 @@ while True:
         break
     else:
         print("\nNot a valid email address")
-        print("Please enter a valid Email with @.\n")
+        print("Please enter a valid Email\n")
         continue
 clear()
 
