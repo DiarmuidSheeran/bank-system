@@ -115,6 +115,16 @@ The account number can always be found in user info section.<br>
 * I would also like to implement a way for the user to be able to buy more than one stock or cryptocurrency.
 
 ## Technolgies Used
+### Python
+* Used to develop the application
+### Github
+* Used to store the source code of the application
+### Heroku
+* Used for deployment and hosting of the application
+### Gitpod
+* IDE used for creating the application
+
+## Testing
 
 
 
