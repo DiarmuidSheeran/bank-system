@@ -754,11 +754,21 @@ class BankAccount(User):
     def quiz_prize(self):
         """
         If user scores 100% in the quiz this function will add the stock to the users account
+        or money to their current account
         """
         google = random.randint(200, 350)
-        self.stocks += float(google)
-        self.google += float(google)
-        print("Congratulations, You have just won a share in google!")
+        if self.google != 0:
+            self.balance += float(google)
+            print("\nYou already own a share in Google.")
+            print("You can only hold one share in Google.")
+            print(f"Google is trading at €{google} today.")
+            print(f"€{google} has been added to your current account instead.")
+            go_back_key()
+        else:
+            self.stocks += float(google)
+            self.google += float(google)
+            print("Congratulations, You have just won a share in google!")
+            go_back_key()
 
 
 def stock_quiz():
@@ -830,7 +840,6 @@ def stock_quiz():
     score = int(score / len(questions) * 100)
     print(f"You scored: {score}% in the quiz!")
     if score == 100:
-        quiz = 1
         initial_balance.quiz_prize()
     else:
         print("Unfortunaitly you didnt win a share in google today :(\n")
