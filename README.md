@@ -142,7 +142,7 @@ The account number can always be found in user info section.<br>
 * I have tested that on completion of the quiz that the user either recives a share in google or that value added to their current account.
 * I have tested that the clear funtion works to clear the terminal when called.
 * I have tested my code using the pep8 checker to validate my python code.
-![](documentation/.jpg)
+![Image of code passing linter test](documentation/linter.jpg)
 
 ## Bugs
 * No bugs in the code have been found to date.
@@ -174,7 +174,8 @@ The account number can always be found in user info section.<br>
 * I used [Tina Franzen's](https://www.youtube.com/watch?v=x2sWz_S6X94&list=PLdK_jsurke3Jv5Z4TE2Z67xreXspgygL8&index=6) Youtube video to implement the clear screen function.
 * I used [johan godinho's](https://www.youtube.com/watch?v=xTh-ln2XhgU&t=737s) Youtube video as a guide to building a bank account application using python.
 
-
+## Acknowledgements
+* I would like to thank my mentor Derek McAuley for his outstanding efforts in guiding me through this project
 
 
 
