@@ -125,6 +125,24 @@ The account number can always be found in user info section.<br>
 * IDE used for creating the application
 
 ## Testing
+* I have tested that when the program starts the welcome message appears along with prompt to continue.
+* I have tested that the forward_key functions works when called upon.
+* I have tested that the go_back_key funtction works when called upon.
+* I have tested that the user cannot use special characters or numbers in their first name, second name and country.
+* I have tested that the user must enter an age over 18.
+* I have tested that a user cannot enter a value that is not a number for their age.
+* I have tested that a user must enter the symbols "@" and "." for their email.
+* I have tested that all money values to be entered throught the application requrire a number with no letters or special characters allowed.
+* I have tested that when a user enters a value within the menu option that they are redirected to that menu until a valid character is inputed.
+* I have tested that in order to make a withdrawl the user must enter their corrct account number assigned to them upon account registration.
+* I have tested that the current account, stock, crypto and savings balance's are all updated correctly when deposits, withdrawls and trasactions are completed. 
+* I have tested that the quiz works.
+* I have tested that on completion of the quiz that the user either recives a share in google or that value added to their current account.
+* I have tested that the clear funtion works to clear the terminal when called.
+* I have tested my code using the pep8 checker to validate my python code.
+![](documentation/.jpg)
+
+## Bugs
 
 
 
