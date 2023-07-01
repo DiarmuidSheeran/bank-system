@@ -166,6 +166,16 @@ The account number can always be found in user info section.<br>
 * Manual deployment deploys the current state of a branch.
 * Click deploy branch.
 
+## Credits
+### Content
+* I used contnet from the course delivered from the [Code Institute](https://codeinstitute.net/ie/) to implent and understand some of the python concepts I had developed.
+* I found the [Python Crash Course](https://www.amazon.co.uk/Python-Crash-Course-3Rd-Matthes/dp/1718502702/ref=sr_1_1?keywords=python+crash+course&qid=1688224762&sprefix=python+cra%2Caps%2C54&sr=8-1) book as a great reasurce to further develop and implent python concepts such as loops and lists.
+* I used [SDET- QA Automation Techie's](https://www.youtube.com/watch?v=mG3aGgFYJSE&list=PLdK_jsurke3Jv5Z4TE2Z67xreXspgygL8&index=10) Youtube video to help implement the regular expresions in my code.
+* I used [Tina Franzen's](https://www.youtube.com/watch?v=x2sWz_S6X94&list=PLdK_jsurke3Jv5Z4TE2Z67xreXspgygL8&index=6) Youtube video to implement the clear screen function.
+* I used [johan godinho's](https://www.youtube.com/watch?v=xTh-ln2XhgU&t=737s) Youtube video as a guide to building a bank account application using python.
+
+
+
 
 
 
