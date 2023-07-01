@@ -17,6 +17,8 @@ This application is a python based banking application. It allows the user to cr
 * [Acknowledgements](#acknowledgements)
 
 ## Project Planning
+### Flow Chart
+![Image of flow chart](documentation/flow-chart.jpeg)
 
 ## Project Walkthrough
 ### Overview
