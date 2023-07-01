@@ -175,6 +175,7 @@ The account number can always be found in user info section.<br>
 * I used [SDET- QA Automation Techie's](https://www.youtube.com/watch?v=mG3aGgFYJSE&list=PLdK_jsurke3Jv5Z4TE2Z67xreXspgygL8&index=10) Youtube video to help implement the regular expresions in my code.
 * I used [Tina Franzen's](https://www.youtube.com/watch?v=x2sWz_S6X94&list=PLdK_jsurke3Jv5Z4TE2Z67xreXspgygL8&index=6) Youtube video to implement the clear screen function.
 * I used [johan godinho's](https://www.youtube.com/watch?v=xTh-ln2XhgU&t=737s) Youtube video as a guide to building a bank account application using python.
+* I used [Lucid's Flow Chart](https://www.lucidchart.com/pages/landing/diagram-software?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier1_mixed_search_brand_exact_&km_CPC_CampaignId=1490375427&km_CPC_AdGroupID=55688909497&km_CPC_Keyword=lucidchart%20diagram&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=476144046869&km_CPC_TargetID=kwd-471845457247&km_CPC_Country=20486&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gclid=Cj0KCQjwnf-kBhCnARIsAFlg491CSSoL4GHgFnXcfq-_CDFd7mGi62HB6beRE9BcSNeSJONoLx74TDQaAjynEALw_wcB) application for the flow chart creation.
 
 ## Acknowledgements
 * I would like to thank my mentor Derek McAuley for his outstanding efforts in guiding me through this project
