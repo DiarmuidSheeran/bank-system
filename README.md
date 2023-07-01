@@ -109,6 +109,14 @@ The account number can always be found in user info section.<br>
 * If the user enters a non valid character on the menus the menu function is re-called.
 
 
+## Future Features
+### Due to time constraints on the project there are some features I would have had liked to implement.<br>These include:
+* Add an API to get the actual real time value's for the stocks and cryptocurencies.
+* I would also like to implement a way for the user to be able to buy more than one stock or cryptocurrency.
+
+## Technolgies Used
+
+
 
 
 
