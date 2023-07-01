@@ -78,5 +78,35 @@ This application is a python based banking application. It allows the user to cr
 ![User logging out of application](documentation/log-out.jpg)
 
 ### Fail safes
-* 
+* When the user tries to enter the wrong character they are prompted to enter they are met with an error
+![User entered the wrong character](documentation/not-valid-continue.jpg)
+
+* Regular expression operations are used to make sure only letters are used in the name and country, only number are used in the age and the email must consist of an "@" and "." symbols.<br>
+When the application prompts the user to add a money value regular expresions are called to make sure only a number value is entered.<br>
+If the user enters no value for any of these prompts the will get a "No data entered" error message.<br>
+![User informed of using characters that are not allowed](documentation/wrong-characters.jpg)
+
+* If the user enter an age below the age of 18 they will be informed that they cannot create an account under the age of 18
+![User informed they must be over the age of 18](documentation/age-limit.jpg)
+
+* If the user's balance is to low for the action they are trying to undertake, they will be informed they have an insuffiecient balance to complete the operation.<br>
+An example of this would be that they try to deposit €100 to their savings account but their current account balance is only €50.<br>
+![User informed they have insufficient funds to complete action](documentation/insufficient-funds.jpg)
+
+* If the user has no money invested in stocks or crypto and tries to sell their investments they will be given an alert message and a prompt.<br>
+![User informed they have no money invested](documentation/no-investments.jpg)
+
+* Because the application only allows the user to own one stock or crypto at a time if the user already owns a share in Google they will recieve the current value of Google deposited into their current account.<br>
+![User informed they can only have 1 share in google and money has been added to their account](documentation/quiz-result-owning-google.jpg)
+
+* If the user enters their account number wrong they will be given a security message and prompted to return to the main menu.<br>
+The account number can always be found in user info section.<br>
+![User informed they entered the wrong account number](documentation/account-num-wrong.jpg)
+
+* If the user enters a non valid character on the menus the menu function is re-called.
+
+
+
+
+
 
