@@ -2,6 +2,8 @@
 This application is a python based banking application. It allows the user to create an account, deposit money, withdraw money, move money to a savings account, buy and sell stocks and/or cryptocurrencies, check account information, check account balances and take a quiz to win a stock share.
 
 ## Live Site & Repository
+* [Live Site](https://banking-system-simulator-0a3de3c2c22e.herokuapp.com/)
+* [Repository](https://github.com/DiarmuidSheeran/bank-system)
 
 ## Contents
 * [Project Planning](#project-planning)
