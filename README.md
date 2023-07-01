@@ -143,6 +143,8 @@ The account number can always be found in user info section.<br>
 ![](documentation/.jpg)
 
 ## Bugs
+* No bugs in the code have been found to date.
+
 
 
 
