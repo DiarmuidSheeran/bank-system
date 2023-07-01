@@ -65,6 +65,9 @@ This application is a python based banking application. It allows the user to cr
 ![user prompted to sell bitcoin](documentation/sell-bitcoin.jpg)
 ![successfull sale of bitcoin](documentation/sell-bitcoin-success.jpg)
 
+* The user's balance is updated as they complete different actions or transactions. The check balance feature also gets updated with their savings and it's interest rate along with fututre projections. The check balance also gets updated with the value of their current investment portfolio.
+![Filled in current balance](documentation/check-balance-full.jpg)
+
 * The user can check their account information.<br>
 ![checking user account information](documentation/user-info.jpg)
 
@@ -104,6 +107,7 @@ The account number can always be found in user info section.<br>
 ![User informed they entered the wrong account number](documentation/account-num-wrong.jpg)
 
 * If the user enters a non valid character on the menus the menu function is re-called.
+
 
 
 
