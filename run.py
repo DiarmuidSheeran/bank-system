@@ -109,15 +109,15 @@ class BankAccount(User):
         if self.savings != 0:
             print(
                 f"\nYour Current Savings Account Balance is: €{self.savings}"
-                f" at a 0.025% APY"
+                f" \nat a 0.025% APY"
             )
             print(
                 f"In one year you are expected to make"
-                f" €{int(self.savings)*0.025} in interest"
+                f" \n€{int(self.savings)*0.025} in interest"
             )
             print(
                 f"With your current balance, your Savings account balance is"
-                f" projected to be at €{savings_projection} in one years time."
+                f" \nprojected to be at €{savings_projection} in one years time."
             )
         else:
             print(f"\nYour Savings Account balance is €{self.savings}")
@@ -256,7 +256,7 @@ class BankAccount(User):
         while True:
             amount = input(
                 "\nHow much would you like to deposit from your current"
-                " account to your saving account?\n"
+                " account \nto your saving account?\n"
             )
             if not amount:
                 print("No Data Entered\n")
@@ -267,7 +267,7 @@ class BankAccount(User):
             ):
                 if self.balance - float(amount) < 0:
                     print("Insuficient funds available to transfer to savings"
-                          " account!")
+                          " \naccount!")
                     print(f"Your current account balance is {self.balance}.\n")
                     while True:
                         choice = input(
@@ -289,12 +289,12 @@ class BankAccount(User):
                     clear()
                     print(
                         f"You have succesfully deposited €{amount} to your"
-                        f" savings account."
+                        f" \nsavings account."
                     )
                     print(f"Your new savings account balance is"
-                          f" €{self.savings}")
+                          f" \n€{self.savings}")
                     print(f"Your new current account balance is"
-                          f" €{self.balance}")
+                          f" \n€{self.balance}")
                     go_back_key()
             else:
                 print("\nNo special characters or letters are allowed.")
@@ -874,29 +874,29 @@ def stock_quiz():
     options = (
         (
             "A. The Stock Market is a market where people bet on race horses"
-            "to gain some money.",
+            " \nto gain some money.",
             "B. The Stock Market is a market where people buy products which"
-            "the merchants have a lot of stock of ",
+            " \nthe merchants have a lot of stock of ",
             "C. The Stock Market is a market where people can buy stocks which"
-            "are shares of companies.",
+            " \nare shares of companies.",
         ),
         (
             "A. The bear means stocks are falling and the bull means stocks"
-            "are going up.",
+            " \nare going up.",
             "B. They are signs that the Stock Market is opened and closed.",
             "C. The bear means stocks are rising and the bull means stocks are"
-            "falling.",
+            " \nfalling.",
         ),
         (
             "A. Earnings are used for reinvestment in order to maintain the"
-            "growing trend of the stocks",
+            " \ngrowing trend of the stocks",
             "B. The stocks are consistently profitable with a dividend"
-            "payment",
+            " \npayment",
             "C. They are traded below its market price",
         ),
         (
             "A. Selling securities that the investor has borrowed and prepared"
-            "to buy back later at a lower price",
+            " \nto buy back later at a lower price",
             "B. An trading strategy used to profit from a price decline",
             "C. Both A and B",
         ),
