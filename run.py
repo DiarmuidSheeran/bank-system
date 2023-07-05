@@ -247,6 +247,8 @@ class BankAccount(User):
                         continue
             else:
                 print("\nSecurity Risk, your account number is inncorect")
+                print("\nYou can find your account number in account info"
+                      "\n section at the main menu")
                 go_back_key()
 
     def savings_account(self):
