@@ -12,8 +12,6 @@ num_check = re.compile("[0123456789]")
 def clear():
     """
     Clears the screen when called
-    """
-    """
     check if operating system is mac and linux or windows.
     """
     if os.name == "posix":
@@ -150,28 +148,32 @@ class BankAccount(User):
         """
         clear()
         while True:
-            deposit = input(
-                "\nHow much would you like to deposit to you current"
-                " account?\n"
-            )
-            if not deposit:
-                print("No Data Entered\n")
-                continue
-            if (
-                char_check.search(deposit) is None
-                and special_character_check.search(deposit) is None
-            ):
-                self.balance = self.balance + float(deposit)
-                clear()
-                print(
-                    f"You have succesfully deposited €{deposit} to your"
-                    f" current account."
+            try:
+                deposit = input(
+                    "\nHow much would you like to deposit to you current"
+                    " account?\n"
                 )
-                print(f"Your new current account balance is €{self.balance}")
-                go_back_key()
-            else:
-                print("\nNo special characters or letters are allowed.")
-                print("Please enter a valid amount to deposit.\n")
+                if not deposit:
+                    print("No Data Entered\n")
+                    continue
+                if (
+                    char_check.search(deposit) is None
+                    and special_character_check.search(deposit) is None
+                ):
+                    self.balance = self.balance + float(deposit)
+                    clear()
+                    print(
+                        f"You have succesfully deposited €{deposit} to your"
+                        f" current account."
+                    )
+                    print(f"Your new current account balance is €{self.balance}")
+                    go_back_key()
+                else:
+                    print("\nNo special characters or letters are allowed.")
+                    print("Please enter a valid amount to deposit.\n")
+                    continue
+            except ValueError:
+                print("\nNot a valid entry\n")
                 continue
 
     def withdraw_from_current_account(self):
@@ -190,54 +192,58 @@ class BankAccount(User):
             if pin_match == self.account_num:
                 clear()
                 while True:
-                    withdraw = input(
-                        "\nHow much would you like to withdraw from your"
-                        " current account?\n"
-                    )
-                    if not withdraw:
-                        print("No Data Entered\n")
-                        continue
-                    if (
-                        char_check.search(withdraw) is None
-                        and special_character_check.search(withdraw) is None
-                    ):
-                        if self.balance - float(withdraw) < 0:
-                            print("Insuficient funds available!")
-                            print(f"Your current account balance is"
-                                  f" {self.balance}.\n")
-                            while True:
-                                choice = input(
-                                    "Would you like to make a withdrawl?"
-                                    " (yes/no)\n"
-                                )
-                                if choice == "yes":
-                                    clear()
-                                    break
-                                elif choice == "no":
-                                    clear()
-                                    main_menu()
-                                else:
-                                    print(
-                                        "Not a valid Option! Please type"
-                                        " yes or no.\n"
+                    try:
+                        withdraw = input(
+                            "\nHow much would you like to withdraw from your"
+                            " current account?\n"
+                        )
+                        if not withdraw:
+                            print("No Data Entered\n")
+                            continue
+                        if (
+                            char_check.search(withdraw) is None
+                            and special_character_check.search(withdraw) is None
+                        ):
+                            if self.balance - float(withdraw) < 0:
+                                print("Insuficient funds available!")
+                                print(f"Your current account balance is"
+                                    f" {self.balance}.\n")
+                                while True:
+                                    choice = input(
+                                        "Would you like to make a withdrawl?"
+                                        " (yes/no)\n"
                                     )
-                                    continue
+                                    if choice == "yes":
+                                        clear()
+                                        break
+                                    elif choice == "no":
+                                        clear()
+                                        main_menu()
+                                    else:
+                                        print(
+                                            "Not a valid Option! Please type"
+                                            " yes or no.\n"
+                                        )
+                                        continue
+                            else:
+                                self.balance = self.balance - float(withdraw)
+                                clear()
+                                print(
+                                    f"You have succesfully withdrawn €{withdraw}"
+                                    f" from your current account."
+                                )
+                                print(
+                                    f"Your new current account balance is"
+                                    f" €{self.balance}"
+                                )
+                                go_back_key()
                         else:
-                            self.balance = self.balance - float(withdraw)
-                            clear()
-                            print(
-                                f"You have succesfully withdrawn €{withdraw}"
-                                f" from your current account."
-                            )
-                            print(
-                                f"Your new current account balance is"
-                                f" €{self.balance}"
-                            )
-                            go_back_key()
-                    else:
-                        print("\nNo special characters or letters"
-                              " are allowed.")
-                        print("Please enter a valid amount to withdraw.\n")
+                            print("\nNo special characters or letters"
+                                " are allowed.")
+                            print("Please enter a valid amount to withdraw.\n")
+                            continue
+                    except ValueError:
+                        print("\nNot a valid entry\n")
                         continue
             else:
                 print("\nSecurity Risk, your account number is inncorect")
@@ -254,51 +260,55 @@ class BankAccount(User):
         """
         clear()
         while True:
-            amount = input(
-                "\nHow much would you like to deposit from your current"
-                " account \nto your saving account?\n"
-            )
-            if not amount:
-                print("No Data Entered\n")
-                continue
-            if (
-                char_check.search(amount) is None
-                and special_character_check.search(amount) is None
-            ):
-                if self.balance - float(amount) < 0:
-                    print("Insuficient funds available to transfer to savings"
-                          " \naccount!")
-                    print(f"Your current account balance is {self.balance}.\n")
-                    while True:
-                        choice = input(
-                            "Would you like to make a transfer? (yes/no)\n"
-                        ).lower()
-                        if choice == "yes":
-                            clear()
-                            break
-                        elif choice == "no":
-                            clear()
-                            main_menu()
-                        else:
-                            print("Not a valid Option! Please type yes or"
-                                  " no.\n")
-                            continue
+            try:
+                amount = input(
+                    "\nHow much would you like to deposit from your current"
+                    " account \nto your saving account?\n"
+                )
+                if not amount:
+                    print("No Data Entered\n")
+                    continue
+                if (
+                    char_check.search(amount) is None
+                    and special_character_check.search(amount) is None
+                ):
+                    if self.balance - float(amount) < 0:
+                        print("Insuficient funds available to transfer to savings"
+                            " \naccount!")
+                        print(f"Your current account balance is {self.balance}.\n")
+                        while True:
+                            choice = input(
+                                "Would you like to make a transfer? (yes/no)\n"
+                            ).lower()
+                            if choice == "yes":
+                                clear()
+                                break
+                            elif choice == "no":
+                                clear()
+                                main_menu()
+                            else:
+                                print("Not a valid Option! Please type yes or"
+                                    " no.\n")
+                                continue
+                    else:
+                        self.balance = self.balance - float(amount)
+                        self.savings += float(amount)
+                        clear()
+                        print(
+                            f"You have succesfully deposited €{amount} to your"
+                            f" \nsavings account."
+                        )
+                        print(f"Your new savings account balance is"
+                            f" \n€{self.savings}")
+                        print(f"Your new current account balance is"
+                            f" \n€{self.balance}")
+                        go_back_key()
                 else:
-                    self.balance = self.balance - float(amount)
-                    self.savings += float(amount)
-                    clear()
-                    print(
-                        f"You have succesfully deposited €{amount} to your"
-                        f" \nsavings account."
-                    )
-                    print(f"Your new savings account balance is"
-                          f" \n€{self.savings}")
-                    print(f"Your new current account balance is"
-                          f" \n€{self.balance}")
-                    go_back_key()
-            else:
-                print("\nNo special characters or letters are allowed.")
-                print("Please enter a valid amount to deposit.\n")
+                    print("\nNo special characters or letters are allowed.")
+                    print("Please enter a valid amount to deposit.\n")
+                    continue
+            except ValueError:
+                print("\nNot a valid entry\n")
                 continue
 
     def buy_google(self):
@@ -1263,20 +1273,24 @@ entered_info.account_created()
 
 # User promted to enter an intial amount to their bank balance
 while True:
-    balance = input("Please enter an amount for your initial deposit:\n")
+    try:
+        balance = input("Please enter an amount for your initial deposit:\n")
 
-    if not balance:
-        print("No deposit entered!\n")
+        if not balance:
+            print("No deposit entered!\n")
+            continue
+        if (
+            char_check.search(balance) is None
+            and special_character_check.search(balance) is None
+        ):
+            break
+        else:
+            print("\nNo special characters or letters are allowed.\n")
+            continue
+            clear()
+    except ValueError:
+        print("\nNot a valid entry\n")
         continue
-    if (
-        char_check.search(balance) is None
-        and special_character_check.search(balance) is None
-    ):
-        break
-    else:
-        print("\nNo special characters or letters are allowed.\n")
-        continue
-        clear()
 
 
 # Add Values to bank and pass data back to initial deposit with balance amount
