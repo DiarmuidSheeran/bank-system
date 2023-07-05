@@ -1205,22 +1205,26 @@ while True:
         continue
 clear()
 while True:
-    age = input("Please enter your age:\n")
+    try:
+        age = input("Please enter your age:\n")
 
-    if not age:
-        print("No Data Entered\n")
-        continue
-    if char_check.search(age) is None and \
-            special_character_check.search(age) is None:
-        age = int(age)
-        if age < 18:
-            print("\nYou must be over 18 to have a Bank Account with us.\n")
+        if not age:
+            print("No Data Entered\n")
             continue
+        if char_check.search(age) is None and \
+                special_character_check.search(age) is None:
+            age = int(age)
+            if age < 18:
+                print("\nYou must be over 18 to have a Bank Account with us.\n")
+                continue
+            else:
+                break
         else:
-            break
-    else:
-        print("\nNo special characters or letters are allowed.")
-        print("Please enter a valid age.\n")
+            print("\nNo special characters or letters are allowed.")
+            print("Please enter a valid age.\n")
+            continue
+    except ValueError:
+        print("\nNot a valid entry\n")
         continue
 
 
