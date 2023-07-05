@@ -1274,7 +1274,7 @@ entered_info.account_created()
 # User promted to enter an intial amount to their bank balance
 while True:
     try:
-        balance = input("Please enter an amount for your initial deposit:\n")
+        balance = input("Please enter an amount for your initial deposit:\n").lower()
 
         if not balance:
             print("No deposit entered!\n")
