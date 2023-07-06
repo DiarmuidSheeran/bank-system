@@ -118,7 +118,7 @@ The account number can always be found in user info section.<br>
 * Add an API to get the actual real time value's for the stocks and cryptocurencies.
 * I would also like to implement a way for the user to be able to buy more than one stock or cryptocurrency.
 
-## Technolgies Used
+## Technologies Used
 ### Python
 * Used to develop the application
 ### Github

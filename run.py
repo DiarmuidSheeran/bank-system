@@ -998,6 +998,34 @@ def crypto_buy_menu():
         else:
             crypto_buy_menu()
 
+def check_balance_menu():
+    """
+    A menu that allows the user a choice of which balance they want to check
+    """
+    clear()
+    print("<--------------------------->")
+    print("     Account Balance Menu    ")
+    print("<--------------------------->\n")
+    print("1. Current Account Balance")
+    print("2. Savings Account Balance")
+    print("3. Stock Portfolio Balance")
+    print("4. Crypto Portofolio Balance")
+    print("5. Main Menu")
+    choice = input("Please choose between options 1 - 5:\n")
+    while True:
+        if choice == "1":
+            current_balance()
+        elif choice == "2":
+            savings_balance()
+        elif choice == "3":
+            stock_balance()
+        elif choice == "4":
+            crypto_blanance()
+        elif choice == "5":
+            main_menu()
+        else:
+            check_balance_menu()
+
 
 def crypto_sale_menu():
     """
