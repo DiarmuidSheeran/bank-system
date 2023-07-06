@@ -97,11 +97,11 @@ class BankAccount(User):
         print("<------------Current Account Balance Info-------------->")
         print(f"\nYour Current Account Balance is: €{self.balance}")
         go_back_key()
-    
+
     def savings_balance(self):
         """
         Function to display when promted the savings account balance
-        If the user has money in savings they will be shown a 
+        If the user has money in savings they will be shown a
         projection of what it could be worth
         """
         clear()
@@ -118,7 +118,8 @@ class BankAccount(User):
             )
             print(
                 f"With your current balance, your Savings account balance is"
-                f" \nprojected to be at €{savings_projection} in one years time."
+                f" \nprojected to be at €{savings_projection} in one years"
+                f" time."
             )
         else:
             print(f"\nYour Savings Account balance is €{self.savings}")
@@ -181,7 +182,8 @@ class BankAccount(User):
                         f"You have succesfully deposited €{deposit} to your"
                         f" current account."
                     )
-                    print(f"Your new current account balance is €{self.balance}")
+                    print(f"Your new current account balance is"
+                          f" €{self.balance}")
                     go_back_key()
                 else:
                     print("\nNo special characters or letters are allowed.")
@@ -215,14 +217,12 @@ class BankAccount(User):
                         if not withdraw:
                             print("No Data Entered\n")
                             continue
-                        if (
-                            char_check.search(withdraw) is None
-                            and special_character_check.search(withdraw) is None
-                        ):
+                        if char_check.search(withdraw) is None and \
+                           special_character_check.search(withdraw) is None:
                             if self.balance - float(withdraw) < 0:
                                 print("Insuficient funds available!")
                                 print(f"Your current account balance is"
-                                    f" {self.balance}.\n")
+                                      f" {self.balance}.\n")
                                 while True:
                                     choice = input(
                                         "Would you like to make a withdrawl?"
@@ -244,8 +244,8 @@ class BankAccount(User):
                                 self.balance = self.balance - float(withdraw)
                                 clear()
                                 print(
-                                    f"You have succesfully withdrawn €{withdraw}"
-                                    f" from your current account."
+                                    f"You have succesfully withdrawn"
+                                    f" €{withdraw} from your current account."
                                 )
                                 print(
                                     f"Your new current account balance is"
@@ -254,7 +254,7 @@ class BankAccount(User):
                                 go_back_key()
                         else:
                             print("\nNo special characters or letters"
-                                " are allowed.")
+                                  " are allowed.")
                             print("Please enter a valid amount to withdraw.\n")
                             continue
                     except ValueError:
@@ -290,9 +290,10 @@ class BankAccount(User):
                     and special_character_check.search(amount) is None
                 ):
                     if self.balance - float(amount) < 0:
-                        print("Insuficient funds available to transfer to savings"
-                            " \naccount!")
-                        print(f"Your current account balance is {self.balance}.\n")
+                        print("Insuficient funds available to transfer to"
+                              " \nyour savings account!")
+                        print(f"Your current account balance is"
+                              f"{self.balance}.\n")
                         while True:
                             choice = input(
                                 "Would you like to make a transfer? (yes/no)\n"
@@ -305,7 +306,7 @@ class BankAccount(User):
                                 main_menu()
                             else:
                                 print("Not a valid Option! Please type yes or"
-                                    " no.\n")
+                                      " no.\n")
                                 continue
                     else:
                         self.balance = self.balance - float(amount)
@@ -316,9 +317,9 @@ class BankAccount(User):
                             f" \nsavings account."
                         )
                         print(f"Your new savings account balance is"
-                            f" \n€{self.savings}")
+                              f" \n€{self.savings}")
                         print(f"Your new current account balance is"
-                            f" \n€{self.balance}")
+                              f" \n€{self.balance}")
                         go_back_key()
                 else:
                     print("\nNo special characters or letters are allowed.")
@@ -1013,6 +1014,7 @@ def crypto_buy_menu():
         else:
             crypto_buy_menu()
 
+
 def check_balance_menu():
     """
     A menu that allows the user a choice of which balance they want to check
@@ -1270,7 +1272,8 @@ while True:
                 special_character_check.search(age) is None:
             age = int(age)
             if age < 18:
-                print("\nYou must be over 18 to have a Bank Account with us.\n")
+                print("\nYou must be over 18 to have a Bank Account"
+                      " with us.\n")
                 continue
             else:
                 break
@@ -1319,7 +1322,8 @@ entered_info.account_created()
 # User promted to enter an intial amount to their bank balance
 while True:
     try:
-        balance = input("Please enter an amount for your initial deposit:\n").lower()
+        balance = input("Please enter an amount for your initial"
+                        " deposit:\n").lower()
 
         if not balance:
             print("No deposit entered!\n")
