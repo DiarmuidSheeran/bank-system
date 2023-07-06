@@ -1213,7 +1213,7 @@ def main_menu():
             stock_quiz()
         elif choice == "9":
             clear()
-            print("Thank you for stopping by we hape to see you again soon!")
+            print("Thank you for stopping by we hope to see you again soon!")
             quit()
         else:
             main_menu()

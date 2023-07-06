@@ -22,7 +22,7 @@ This application is a python based banking application. It allows the user to cr
 
 ## Project Walkthrough
 ### Overview
-* On startup of the application the user is met with a gretting method and a propmt to begin registering a new account.
+* On startup of the application the user is met with a greeting message and a propmt to begin registering a new account.
 ![start up screen](documentation/start-up.jpg)
 
 * The user is then prompted to enter their first name, last name, age, country of residence and email address.
@@ -44,7 +44,7 @@ This application is a python based banking application. It allows the user to cr
 ![Deposit to current account](documentation/deposit-to-current.jpg)<br>
 ![Successful deposit to current account](documentation/successful-deposit.jpg)
 
-* The user can withdraw money from their account after entering their correct account number that was assigned to the on registration.
+* The user can withdraw money from their account after entering their correct account number that was assigned to them on registration.
 ![withdraw security page](documentation/withdarw-security.jpg)<br>
 ![user prompt to withdraw](documentation/withdraw.jpg)<br>
 ![successful withdrawl of funds](documentation/successful-withdraw.jpg)
@@ -64,7 +64,7 @@ This application is a python based banking application. It allows the user to cr
 ![user propted to purchase bitcoin](documentation/buy-bitcoin.jpg)
 ![successfull purchase of bitcoin](documentation/buy-bitcoin-success.jpg)
 
-* The user can sell their stocks or cryptocurencies and will be told whether they sold at a profit or loss.
+* The user can sell their stocks or cryptocurencies and will be told whether they sold them at a profit or loss.
 ![sell crypto menu](documentation/sell-crypto-menu.jpg)
 ![user prompted to sell bitcoin](documentation/sell-bitcoin.jpg)
 ![successfull sale of bitcoin](documentation/sell-bitcoin-success.jpg)
@@ -85,7 +85,7 @@ This application is a python based banking application. It allows the user to cr
 ![User logging out of application](documentation/log-out.jpg)
 
 ### Fail safes
-* When the user tries to enter the wrong character they are prompted to enter they are met with an error
+* When the user tries to enter the wrong character they are prompted to enter, they are met with an error
 ![User entered the wrong character](documentation/not-valid-continue.jpg)
 
 * Regular expression operations are used to make sure only letters are used in the name and country, only number are used in the age and the email must consist of an "@" and "." symbols.<br>
@@ -93,7 +93,7 @@ When the application prompts the user to add a money value regular expresions ar
 If the user enters no value for any of these prompts the will get a "No data entered" error message.<br>
 ![User informed of using characters that are not allowed](documentation/wrong-characters.jpg)
 
-* If the user enter an age below the age of 18 they will be informed that they cannot create an account under the age of 18
+* If the user enters an age below the age of 18 they will be informed that they cannot create an account under the age of 18
 ![User informed they must be over the age of 18](documentation/age-limit.jpg)
 
 * If the user's balance is to low for the action they are trying to undertake, they will be informed they have an insuffiecient balance to complete the operation.<br>
