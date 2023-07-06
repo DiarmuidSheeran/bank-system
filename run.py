@@ -89,20 +89,23 @@ class BankAccount(User):
         """
         self.balance = float(self.balance)
 
-    def current_account_balance(self):
+    def current_balance(self):
         """
-        Function to display when promted all of the differnet accounts within
-        the bank system.
-        It shows the user the different values within different sections of
-        their accounts.
-        It gives the user information on the percentage of interest they are
-        earning on there savings
-        and what prices they had bought there investments at.
+        Function to display when promted the current account balance
         """
-        savings_projection = float(self.savings) + float(self.savings) * 0.025
+        clear()
         print("<------------Current Account Balance Info-------------->")
         print(f"\nYour Current Account Balance is: €{self.balance}")
-        print("")
+        go_back_key()
+    
+    def savings_balance(self):
+        """
+        Function to display when promted the savings account balance
+        If the user has money in savings they will be shown a 
+        projection of what it could be worth
+        """
+        clear()
+        savings_projection = float(self.savings) + float(self.savings) * 0.025
         print("\n<------------Savings Account Balance Info-------------->")
         if self.savings != 0:
             print(
@@ -119,7 +122,13 @@ class BankAccount(User):
             )
         else:
             print(f"\nYour Savings Account balance is €{self.savings}")
-        print("")
+        go_back_key()
+
+    def stock_balance(self):
+        """
+        Function to display when promted the stock account balance
+        """
+        clear()
         print("\n<--------------------Stock Balances------------------->")
         print(f"\nYour Current Stock Portfolio Balance is: €{self.stocks}.\n")
         if self.google != 0:
@@ -131,7 +140,13 @@ class BankAccount(User):
         if self.meta != 0:
             print(f"You have 1 share of Meta bought at the price of"
                   f" €{self.meta}")
-        print("")
+        go_back_key()
+
+    def crypto_blanance(self):
+        """
+        Function to display when promted the crypto account balance
+        """
+        clear()
         print("\n<---------------Cryptocurrency Balances--------------->")
         print(f"\nYour Current Crypto Portfolio Balance is: €{self.crypto}.\n")
         if self.bitcoin != 0:
@@ -248,7 +263,7 @@ class BankAccount(User):
             else:
                 print("\nSecurity Risk, your account number is inncorect")
                 print("\nYou can find your account number in account info"
-                      "\n section at the main menu")
+                      "\nsection at the main menu")
                 go_back_key()
 
     def savings_account(self):
@@ -1195,6 +1210,7 @@ def main_menu():
         elif choice == "8":
             stock_quiz()
         elif choice == "9":
+            clear()
             print("Thank you for stopping by we hape to see you again soon!")
             quit()
         else:
