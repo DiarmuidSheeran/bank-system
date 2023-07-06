@@ -1014,13 +1014,13 @@ def check_balance_menu():
     choice = input("Please choose between options 1 - 5:\n")
     while True:
         if choice == "1":
-            current_balance()
+            initial_balance.current_balance()
         elif choice == "2":
-            savings_balance()
+            initial_balance.savings_balance()
         elif choice == "3":
-            stock_balance()
+            initial_balance.stock_balance()
         elif choice == "4":
-            crypto_blanance()
+            initial_balance.crypto_blanance()
         elif choice == "5":
             main_menu()
         else:
@@ -1179,8 +1179,7 @@ def main_menu():
 
     while True:
         if choice == "1":
-            clear()
-            initial_balance.current_account_balance()
+            check_balance_menu()
         elif choice == "2":
             initial_balance.deposit_to_current_account()
         elif choice == "3":
